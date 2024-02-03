@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int i,j,arr[30],tc,n,key,mid=0,flag=0,lb,ub;
+    cout<<"ENTER NUMBER OF TEST CASES\n";
+    cin>>tc;
+    for(i=0;i<tc;i++)
+    {   
+        cout<<"ENTER NUMBER OF ELEMENTS\n";
+        cin>>n;
+        cout<<"ENTER ARRAY ELEMENTS\n";
+        for(j=0;j<n;j++)
+        {
+            cin>>arr[j];
+        }
+        cout<<"ENTER KEY TO SEARCH\n";
+        cin>>key;
+        while(lb<ub)
+        {
+            mid=(lb+ub) /2;
+            if(arr[mid]==key)
+                cout<<"KEY FOUND AT : "<< mid+1 <<endl;
+            else if(key>arr[mid])
+                lb=mid+1;
+            else
+                ub=mid-1;
+        }
+        for(i=0;i<n;i++)
+        {
+            flag=0;
+            if (key==arr[i])
+            {
+                cout<<"KEY FOUND AT : "<< i+1 <<endl;
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0)
+                cout<<"KEY NOT FOUND "<<endl;
+    }
+    return 0;
+}
