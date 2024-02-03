@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int i,arr[30],tc,n,key,flag=0;
+    cout<<"ENTER NUMBER OF TEST CASES\n";
+    cin>>tc;
+    for(i=0;i<tc;i++)
+    {   
+        cout<<"ENTER NUMBER OF ELEMENTS\n";
+        cin>>n;
+        cout<<"ENTER ARRAY ELEMENTS\n";
+        for(i=0;i<n;i++)
+        {
+            cin>>arr[i];
+        }   
+        cout<<"ENTER KEY TO SEARCH\n";
+        cin>>key;
+        for(i=0;i<n;i++)
+        {
+            flag=0;
+            if (key==arr[i])
+            {
+                cout<<"KEY FOUND AT : "<< i+1 <<endl;
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0)
+                cout<<"KEY NOT FOUND "<<endl;
+    }
+    return 0;
+}
